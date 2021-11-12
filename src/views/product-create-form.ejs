@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<form action="¿?" method="___">
+			<form action="/products" method="POST">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
@@ -32,8 +32,12 @@
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
 							<option value="">Elegí</option>
-							<option value="in-sale">En oferta</option>
-							<option value="visited">Últimos agregados</option>
+							<% 
+								category.forEach(element => { %>
+									<option value="<%= element.value %>"><%= element.text %></option>
+							<%	 
+								});
+							 %>
 						</select>
 					</div>
 					<div class="col-12">

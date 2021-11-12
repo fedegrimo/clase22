@@ -9,15 +9,15 @@ const productsController = require('../controllers/productsController');
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.post('/create/', productsController.create); 
-router.get('/', productsController.store); 
+router.get('/create/', productsController.create); 
+router.post('/', productsController.store); 
 
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/detail/:id/', productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/ 
-router.post('/:id/edit', productsController.edit); 
+router.get('/:id/edit', productsController.edit); 
 router.put('/:id', productsController.update); 
 
 
